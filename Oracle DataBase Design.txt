@@ -1,0 +1,204 @@
+create table hari(id number(10),name varchar2(10),location varchar2(10));
+alter table hari add (sal number(10),comm number(10));
+alter table hari modify  sal varchar2(10);
+alter table  hari modify  (sal varchar2(10),location number(10));
+alter table hari drop column (location);
+alter table hari rename column location to loc;
+rename hari to hariharan;
+ drop table table table name;(drop table hariharan;
+ 
+ insert into hari values(20,'vinoth','blr')
+ insert into values(null,'ram','cnn');
+ select *from hariharan;
+ before saving the date it can be undo afrer saving the data it cannot be undo;
+ once you saved the data we cant undo in DML command;
+ TCL -TANSACTION CONTROL LANGUAGE;
+ ROLLBACK
+ COMMIT 
+ DATA CONTROL LANGUAGE DCL;
+ grant and revoke;
+ select satatement is a Dml command;
+ this is used to select and view the record present in the table
+ 
+ select * from emp where deptno=20,30);
+ update hari set name ='hari' where empid='10'
+ delete command used to delete the data but the structure remains same;
+ truncate command used to delete the data but the structure remains same;
+ drop command used to delete the data from the table and structure also deleted
+ List of character functions
+ 
+
+initcap
+upper
+lower
+ltrim
+rtrim
+trim
+nvl 
+nvl2
+Length function
+instr();
+it is used to find the postion of the string
+
+select instr('hariharan.arumugam@bcdtravel.com,'r',2)from dual;
+
+select instr('hariharan.arumugam@bcdtravel.com,'a',6)=8
+
+substr();
+it is used to  find the piece of characrers in the string in a string
+
+
+insert into tablename values('$id','&name','&location';
+dual table is empt table which contains only one row
+
+by using sub string we can get a substring of a string or piece of characters of a string;
+select substr(hariharan.arumugam@bcdtravel.com,4,5) from dual;
+ihara
+
+decode function
+by using decode function we can decode the values one format to another format;
+or short format to long format or long format to short format;
+
+ASCI FUNCTIONS RETURNS ASCI VALUES OF THE CHARACTERS
+SELECT ASCI(CHARACTER FROM THE DUAL;
+
+
+AGGREGATE FUNCTIONS
+COUNT()
+SUM()
+MIN()
+MAX()
+ROUND()
+AVG()
+
+select count(empno)as tot_emp,sum(sal) as total_sal,max(sal) as high_sal,min(sal) as lowest_sal,avg(sal) as average_sal from emp;
+
+select sysdate from dual;
+select sysdate-1 from dual;
+select sysdate +1 from dual;
+
+to_char is used to convert number to character formate
+
+select to_char(sysdate,'dd-mm-yy') from dual; 10-01-22
+select to_char(sysdate,'dd-mm-yyyy') from dual;10-01-2022
+select to_char(sysdate,'dd-mom-yyyy') from dual;10-jan-2022
+select to_char(sysdate,'dd-month-yyyy') from dual;10-january-2022
+select to_char(sysdate,'dd/month/yyyy') from dual; 10/january/2022
+select to_char(sysdate,'day dd month yyyy hh:mi:ss') from dual;
+
+By using add month we can add the month from the current month or subract from the current month
+
+
+select add_month( sysdate,1)from dual;07-12-2022
+select add_month(sysdate,-1) from dual;07-10-2022
+select month_between('07-nov-2022','07-feb-2022')from dual;
+select last_day('04-feb-2022') from dual;
+select next_day('04-jan-2022')from dual;
+select to_char(sysdate,'yyyy')-to_char('hiredate',yyyy)from emp;
+select to_char(sysdate,yyyy)-to_char('hiredate''yyyy')from emp;to find the experience of the employee;
+select to_char(sysdate,yyyy)-to_char(hiredate,yyyy)as experience from emp;
+distinct clause used to remove duplicates from the result set
+this can be used only with select statement;
+select distinct(job) from emp;
+order by clause used to sorts the records in the result sets;
+select * from emp order by sal desc;
+
+condtional operaters
+and or not between
+set operaters
+union union all minus between and like
+when the two condition or true we use and condition;
+when any of the one condition is true among the condtions this will  execute .
+
+set operators 
+union union all minus intesect
+
+constraints:
+   
+not null-not column enforce a column to not accept the null values   create table hari (id varchar2(10) unique,name) insert into  values('','haran')
+unique-  
+Primary constraint
+foreign key or reference
+check
+
+
+joins-combines two or more row from different tables by refering the relatinship between the colum of the tables;
+types of joins
+equal joins or simple joins
+Self joins
+non equii joins
+cross joins or cartetion joins
+left outer joins 
+Right outer joins
+
+select E.empid,E.ename,e.sal,e.deptno,d.dname,d.location from emp e,dept d where e.deptno=d.deptno;
+select empid,ename,sal,e.deptno,d.dname,d.location from emp E,dept D where e.Deptno=d.deptno;
+
+Cartesion join
+when we write a join quert without join conditon is called cartesion join 
+when we write a join query with out join condition is called cartesion joins
+it will produce rows which combaines each rows from the  first table with each row.
+select * from emp1,dept;
+
+self join
+self join compares two different column with in the table and compares the rows 
+select * from MHR;
+select * from mhr m;
+select * from MHR H;
+select M.ENO,M.name as employee,H.MHR from MHR M,MHR H  where m.mhr=h.mhr;
+ Left outer joins
+It returns all the values from left table even though there is no  matches in the right table;
+select e.emp,e.ename,e.sal,e.deptno,d.dname,d.loc from emp E,dept D where E.deptno=D.deptno(+);
+select e.emp,e.ename,e.sal,e.mgr,d.dname,d,loc from emp e,left outer join dept d where e.deptno=d.deptno;
+
+Types of analatical functions
+Rank()
+Dense Rank();
+select empno,ename,job,sal,rank() over(order by sal desc)as emp_rank from emp;
+select empno,ename,job,sal,rank() over(order by sal desc) as emp_rank from emp;
+
+pseudocolumn
+
+
+select empno,ename,sal from emp where sal=(select max(sal) from emp where sal<(select Max(sal) from emp); 
+
+
+select * from emp where (source table all column name) not  in (select * from target table name);
+
+
+
+
+
+
+
+
+
+
+select * from emp where (source table all the column name) not in (select * from target table name);
+
+select * from emp where (pk coulmn) not in (select FK column from target table name);
+
+
+
+
+
+
+74090	625893	540917	648071	542416	325694	536890	34896	82990	581670	501066	34891	7978
+
+74090,625893,540917,648071,542416,325694,536890,34896,82990,581670,501066,34891,7978
+
+3821671,
+3821678,
+3821672,
+3821675,
+3821669,
+3821670,
+3821676,
+2815036,
+3821673,
+2815490,
+3821677,
+2815487,
+3821674
+ 
+ 
