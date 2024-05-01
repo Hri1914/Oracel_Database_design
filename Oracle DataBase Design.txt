@@ -159,23 +159,9 @@ select empno,ename,job,sal,rank() over(order by sal desc) as emp_rank from emp;
 
 pseudocolumn
 
-
 select empno,ename,sal from emp where sal=(select max(sal) from emp where sal<(select Max(sal) from emp); 
-
-
 select * from emp where (source table all column name) not  in (select * from target table name);
-
-
-
-
-
-
-
-
-
-
 select * from emp where (source table all the column name) not in (select * from target table name);
-
 select * from emp where (pk coulmn) not in (select FK column from target table name);
 
 
@@ -183,22 +169,5 @@ select * from emp where (pk coulmn) not in (select FK column from target table n
 
 
 
-74090	625893	540917	648071	542416	325694	536890	34896	82990	581670	501066	34891	7978
-
-74090,625893,540917,648071,542416,325694,536890,34896,82990,581670,501066,34891,7978
-
-3821671,
-3821678,
-3821672,
-3821675,
-3821669,
-3821670,
-3821676,
-2815036,
-3821673,
-2815490,
-3821677,
-2815487,
-3821674
  
  
